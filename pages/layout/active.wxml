@@ -1,0 +1,47 @@
+<!--active.wxml-->
+<view class="container">
+  <view class="wrap">
+      <view class="main">
+      <!--  head -->
+        <view class="head">{{ListJson.title}}</view>
+        <view class="img">
+          <image src="{{ListJson.src}}" />
+        </view>
+        <view class="activeTime">
+          <view class = "durTime">活动时间</view>
+          <view class = "actTime">{{ListJson.actTime}}</view>
+        </view>
+        <view class="activeTime">
+          <view class = "durTime">活动对象</view>
+          <view class = "actTime">{{ListJson.activities}}</view>
+        </view>
+        <view class="activeTime">
+          <view class = "durTime">活动内容</view>
+          <view class = "actTime">
+            {{ListJson.actCont}}
+          </view>
+        </view>
+        <view class="activeTime">
+          <view class = "durTime">活动内容</view>
+          <block wx:for="{{ListJson.actRule}}">
+            <view class = "actTime">
+              {{item}}
+            </view>
+          </block>       
+        </view>
+       <!--  footer -->
+        <view class="footer">
+          <view>
+             温馨提示：
+          </view>
+          <view>
+            扫一扫下方二维码，关注“光大银行信用卡”官方微信（xyk_cebbank），轻松获取更多优惠信息
+          </view>
+          <view>
+            <image src="https://xyk.cebbank.com/images/cebmms/sj_wexin.JPG" style=""/>
+          </view>
+        </view>
+      </view>
+  </view>
+
+</view>

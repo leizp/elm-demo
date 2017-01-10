@@ -1,0 +1,22 @@
+<!--logs.wxml-->
+<view class="container ">
+    <view class="main-wrap">
+        <view class="main-title">
+            <text>选项卡</text>
+        </view>
+        <block wx:for="{{mainShopList}}">
+            <navigator class="shop-list" url="../shopDetail/shopDetial?id={{item.id}}">
+                <view>
+                    <view class="shop-img">
+                        <image src="https://fuss10.elemecdn.com/{{item.image_path}}"/>
+                    </view>
+                    <view class="shop-right">
+                        <view class="now-title">{{item.name}}</view>
+                        <view class="evaluate">{{item.address}}</view>
+                        <view class="describe">{{item.piecewise_agent_fee.description}}</view>
+                    </view>
+                </view>
+            </navigator>
+        </block>
+    </view>
+</view>

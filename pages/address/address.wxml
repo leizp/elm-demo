@@ -1,0 +1,36 @@
+<view class="page">
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+            <view class="weui-cell__bd" style="font-size: 14pt;">当前定位城市:</view>
+            <view class="weui-cell__ft" style="color: #ff6000;font-weight: bold;">北京{{}}</view>
+        </view>
+    </view>
+    <view class="page__hd">
+        <view class="page__desc">热门城市</view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+	        <block wx:for="{{hotcity}}">
+	        	<view  class="weui-flex__item" id="{{item.id}}" bindtap="chose">
+	        		{{item.name}}
+	        	</view>
+	        </block>
+        </view>
+    </view>
+    <view class="page__hd">
+        <view class="page__desc">所有城市</view>
+    </view>
+    <block wx:for="{{titWord}}">
+        <view class="letter" > {{item}} </view>
+	    <view class="page__bd page__bd_spacing">
+		    <view class = "weui-flex" >
+			    <block wx:for="{{address[item]}}">
+			        <view  class="weui-flex__item" id="{{item.id}}" bindtap="chose">
+			        	{{item.name}}
+			        </view>
+			    </block>
+		    </view>
+	    </view>
+    </block> 
+</view>
+

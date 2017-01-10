@@ -1,0 +1,94 @@
+<view class="container">
+	<view class="topWrap" style="background: #f4f4f4;">
+		<view class="top_logo">
+			<image style="width:116rpx;height:116rpx;" src="https://fuss10.elemecdn.com/{{topList.image_path}}" binderror="" bindload=""></image>
+		</view>
+		<view class="top_info">
+			<view class="top_title">{{topList.name}}</view>
+			<view class="top_dur">{{topList.delivery_mode.text}} / {{topList.order_lead_time}}分钟送达 / {{topList.piecewise_agent_fee.description}}</view>
+			<view class="top_dur">
+			    <text style="color:red;text-align: center;margin-right: 5rpx;font-weight: bold;"> {{topList.activities[0].icon_name}} </text>
+			    {{topList.activities[0].description}}
+			 </view>
+		</view>
+		<view class="descr">{{topList.promotion_info}}</view>
+	</view>
+	<view class="foodList">
+	<!-- 导航切换列表 -->
+		<view class="nav-wrap">
+			<view class="nav-item" >
+				<block wx:for="{{navTap}}">
+					<view class=" nav-child {{item.active?'active':''}}" id="{{item.id}}" bindtap ="tap">
+						<view class="navTit" >{{item.name}}</view>
+						<view class="tap-undline"></view>
+					</view>
+				</block>
+			</view>
+		</view>
+		<!-- 滑动内容 -->
+		<swiper duration="500" current="{{current}}" bindchange="tabchange" class="navContainer">
+			<!-- 导航一内容 实现下拉刷新 -->
+			    <swiper-item class="swiperChild">
+			    	<scroll-view scroll-y style="height:100%;width:100%;position:relative;">
+						<view class="f-left" >
+							<block wx:for="{{shopList}}">
+								<view class="listItem {{selected == item.id ? 'active1':''}}" id="{{item.id}}" bindtap="fnSelect">{{item.name}}</view>
+							</block>
+						</view>
+						<view class="r-right">
+							<scroll-view class="scrollY }}" style="top:{{top}}rpx;" bindtouchmove="fnMoveTop" id="{{item.top}}">
+								<block wx:for="{{shopList}}">
+									<view style="font-size: 13pt;color:#666;padding-left:15rpx;" >
+										{{item.name}}
+									</view>
+									<block wx:for="{{ item.foods}}">
+										<view class="listItem1" id="{{item.item_id}}">
+											<view class="itemImg">
+												<image style="width:100%;height:100%;" src="https://fuss10.elemecdn.com/{{item.image_path}}"></image>
+											</view>
+											<view class="food-tit">
+												<view style="font-size: 14pt;">{{item.name}}</view>
+												<view style="font-size: 9pt;">
+													月售{{item.month_sales}}份，好评率{{item.satisfy_rate}}
+												</view>
+												<view style="font-size: 9pt;color: rgb(241, 136, 79);">限10份</view>
+												<view class="addBtn">
+												  <text style="font-size: 14pt;color:#f60;">{{item.specfoods[0].price}}￥</text>		
+												  <text wx:if="{{item.specfoods[0].original_price !== null}}" style="font-size: 13pt;color:#999;text-decoration:line-through;"> 
+												  	{{ item.specfoods[0].original_price }}￥
+												  </text>	
+												  <view class="btn" bindtap="add">+</view>
+												 </view>
+											</view>
+										</view>								
+									</block>
+								</block>
+							</scroll-view>
+						</view>
+			    	</scroll-view>
+
+			    </swiper-item>
+			    <swiper-item class="swiperChild">
+			    	<scroll-view scroll-y style="height:100%;width:100%;">
+						2
+			    	</scroll-view>
+			    </swiper-item>
+		</swiper>		
+	</view>
+</view>
+<!-- 购物车 -->
+<view class="shopCar">
+	<view class="carParent">
+	</view>
+	<view class="carChild">
+		<view class="carImg">
+			<image style="width:60rpx;height:60rpx;" src="/img/car.png">
+			</image>
+		</view>
+		<view class="sumPrice">
+			<text>￥{{sumPrice}}</text>		
+		</view>
+		<view class="addPay">去结算</view>
+	</view>
+			   		
+</view>

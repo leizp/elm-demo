@@ -1,0 +1,40 @@
+.wrap{
+	padding: 10px 10px 10px 10px;
+}
+.main{
+	padding:15px;
+}
+.head{
+	font-size: 20px;
+    font-weight: bold;
+    color: Black;
+    line-height: 35px;
+}
+.img{
+	width:100%;
+}
+.aciveTime{
+	font-size: 14px;
+    padding: 20px 0 20px 8px;
+}
+.durTime{
+    font-weight: bold;
+    font-size: 14px;
+    color: #7e10a1;
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    background: #fff;
+}
+.actTime{
+	text-indent: 2pc;
+	color: #555;
+    line-height: 22px;
+    padding: 5px 0 10px 20px;
+    font-size: 14px;
+}
+.footer{
+	padding: 15px;
+	font-size: 14px;
+	color:#2c2c2c;
+}

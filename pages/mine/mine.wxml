@@ -1,0 +1,152 @@
+<!--mine.wxml-->
+<!-- //验证登录 -->
+<view class="container " wx:if="{{showView==1}}">
+	<view class="top">验证登录</view>
+	<view class="login">
+		<form action="" bindsubmit="formSubmit">
+	        <view class="weui-cells weui-cells_after-title">
+	        	<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errMesg}}</view>
+	            <view class="weui-cell weui-cell_input weui-cell_vcode">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label" >手机号</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="phoneNum" placeholder="请输入手机号" bindblur="getTelNum"/>
+	                </view>
+	                <view class="weui-cell__ft">
+	                    <view class="weui-vcode-btn" bindtap="getMesCode">{{getCode}}</view>
+	                </view>
+	            </view>
+           		<view class="weui-cell weui-cell_input weui-cell_vcode">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">验证码</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" placeholder="请输入验证码" name="mesgCode" bindblur="fnGetCode"/>
+	                </view>	
+	            </view>	            
+<!-- 	            <view class="weui-cell weui-cell_input weui-cell_vcode">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">图片验证码</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" placeholder="请输入验证码" name="veriCode"/>
+	                </view>
+	                <view class="weui-cell__ft">
+	                    <image class="weui-vcode-img" src="/img/vcode.jpg" style="width: 108px"></image>
+	                </view>
+	            </view> -->
+	        </view>
+	        <view class="weui-cells__tips">
+	        	<view class="changeTap" bindtap="changePage" id="2">使用密码登录</view>
+	        </view>
+	        <view class="weui-btn-area">
+	            <button class="weui-btn" type="primary" formType="submit" bindtap="showTopTips" >	登录
+	            </button>
+	        </view>
+	    </form>
+	</view>
+</view>
+<!-- //账号登录 -->
+<view class="container " wx:if="{{showView==2}}">
+	<view class="top">账号登录</view>
+	<view class="login">
+		<form action="" bindsubmit="formSubmit">
+	        <view class="weui-cells weui-cells_after-title">
+	        	<view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errMesg}}</view>
+	            <view class="weui-cell weui-cell_input weui-cell_vcode">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">账号</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" name="phoneNum" placeholder="请输入手机号" />
+	                </view>
+	            </view>
+	            <view class="weui-cell weui-cell_input weui-cell_vcode">
+	                <view class="weui-cell__hd">
+	                    <view class="weui-label">密码</view>
+	                </view>
+	                <view class="weui-cell__bd">
+	                    <input class="weui-input" placeholder="请输入密码" type="password" name="password"/>
+	                </view>
+	            </view>
+	        </view>
+	        <view class="weui-cells__tips">
+	        	<view class="changeTap" bindtap="changePage" id="1">手机号验证登录</view>
+	        </view>
+	        <view class="weui-btn-area">
+	            <button class="weui-btn" type="primary" formType="submit" bindtap="showTopTips">
+					登录
+	            </button>
+	        </view>
+        </form>
+	</view>
+</view>
+<view class="container " wx:if="{{showView==3}}">
+	<view class="loginHeader">
+		<view class="loginImg">
+			<image style="width:100%;height:100%"  src="/img/person.png" ></image>
+		</view>
+		<view class="loginInfo">
+			<view class="info-box">微信名:{{user}}</view>
+			<view class="info-box" style="font-size:10pt">电话:{{telNum}}</view>
+		</view>
+	</view>
+	<view class="favorBox">
+		<view class="conBox">
+			<view class="tit">{{balance}}￥</view>
+			<view class="text">我的余额</view>
+		</view>
+		<view class="conBox">
+			<view class="tit">{{gift_acoument}}个</view>
+			<view class="text">我的优惠</view>
+		</view>
+		<view class="conBox">
+			<view class="tit">{{point}}分</view>
+			<view class="text">我的积分</view>
+		</view>
+	</view>
+	<!-- 列表 -->
+    <view class="weui-cells weui-cells_after-title">
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="/img/1_03.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">我的订单</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="/img/1_06.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">积分商城</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="/img/1_08.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">饿了吗订单</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+    </view>
+
+    <view class="weui-cells weui-cells_after-title">
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="/img/1_11.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">服务中心</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+            <view class="weui-cell__hd">
+                <image src="/img/1_13.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+            </view>
+            <view class="weui-cell__bd">下载饿了吗App</view>
+            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+    </view>
+
+
+</view>

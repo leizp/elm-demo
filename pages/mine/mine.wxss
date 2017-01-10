@@ -1,0 +1,92 @@
+
+page{
+    padding:0;
+    margin:0;
+    background:#f4f4f4;
+}
+.top{
+    width:100%;
+    height:220rpx;
+    color:#09bb1d;
+    text-align: center;
+    line-height: 220rpx;
+    box-sizing: border-box;
+}
+.login{
+    box-sizing: border-box;
+    width:100%;
+    background:#fff;
+}
+.weui-cells__tips{
+    text-align: right;
+    color:#586c94;
+}
+.changeTap{
+    display: inline;
+}
+.changeTap:hover{
+    color:#df2424;
+}
+/*登录成功后显示页面*/
+.loginHeader{
+    width:750px;
+    height:180rpx;
+    box-sizing: border-box;
+    background: #3190e8;
+    padding: .666667rem .4rem;
+    color: #fff;
+    -webkit-box-align: center;
+}
+.loginImg{
+    width:120rpx;
+    height:120rpx;
+    box-sizing: border-box;
+    float:left;
+}
+.loginInfo{
+    width:514rpx;
+    height:120rpx;
+    margin-left:0.48rem;
+    float:left;
+    box-sizing: border-box;
+}
+.info-box{
+    overflow: hidden;
+    font-size: 14pt;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight:bold;
+}
+.favorBox{
+    width:100%;
+    height:167rpx;
+    box-sizing: border-box;
+    background:#fff;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items:center;
+}
+.conBox{
+    height:100%;
+    width:33.3%;
+    box-sizing: border-box;
+    border-right:solid 1px #ddd;
+}
+.tit{
+    width:100%;
+    padding: .453333rem 0 0.2rem;
+    font-size: 16pt;
+    color: #f90;
+    text-align: center;
+}
+.text{
+    width:100%;
+    font-size: 10pt;
+    color: #666;
+    text-align: center;
+}
+.weui-cells{
+    margin-top:40rpx;
+}

@@ -1,0 +1,106 @@
+/*头部轮播导航视图*/
+.topSwiper{
+  width:100%;
+  height:353rpx;
+  box-sizing: border-box;
+  background:#fff;
+}
+swiper-item{
+  width:100%;
+  height:100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  align-items:center;
+  overflow: hidden;  
+}
+swiper-item navigator{
+  width:25%;
+  height:50%;
+  box-sizing: border-box;
+}
+.swiper-img{
+  overflow:hidden;
+  width:90rpx;
+  height:90rpx;
+  margin:.293333rem auto 0;
+}
+.swiper-img image{
+  width:100%;
+  height:100%;
+}
+.swiper-title{
+  width:100%;
+  height:auto;
+  margin-top: .133333rem;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+/*内容视图*/
+.main-wrap{
+  width:100%;
+  margin-top: 10rpx;
+  height:auto;
+}
+.main-title{
+    line-height: 60rpx;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    color: #999;
+    font-size: 14px;
+    padding-left: .4rem;
+}
+.main-title image{
+  display:block;
+  float:left;
+  width:30rpx;
+  height:30rpx;
+  margin:6px 10rpx 0 0;
+}
+.shop-list{
+  width:100%;
+  position: relative;
+  height:180rpx;
+  padding:30rpx 20rpx;
+  box-sizing: border-box;
+  background:#fff;
+}
+.shop-img{
+  float:left;
+  width:120rpx;
+  height:120rpx;
+  overflow:hidden;
+}
+.shop-img image{
+  width:100%;
+  height:100%;
+}
+.shop-right{
+  float:right;
+  width:570rpx;
+  height:120rpx;
+  overflow:hidden;
+  box-sizing: border-box;
+}
+.now-title{
+  font-size: 16px;
+  line-height: 22px;
+}
+.evaluate{
+  font-size: 14px;
+  color:#666;
+  line-height: 20px;
+}
+.describe{
+  font-size: 14px;
+  color:#666;
+  line-height: 20px;
+}
+.f-left{
+  width:170rpx;
+  height:auto;
+  float:left;
+}

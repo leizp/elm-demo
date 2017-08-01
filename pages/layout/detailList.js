@@ -71,7 +71,7 @@ Page({
           if(i>0){
             res.data[i].foodsNum = res.data[i-1].foods.length;
             res.data[i].top = 112*res.data[i].foodsNum+res.data[i-1].top+27;
-          }else{
+          }else if(i == 0){
             res.data[0].foodsNum = 0;
             res.data[0].top = 0;
           }

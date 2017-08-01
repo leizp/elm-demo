@@ -27,7 +27,7 @@ Page({
   onReachBottom:function(){
     //监听页面上拉触底事件的处理函数
     console.log("已经上拉到底部");
-    this.fnProgress();
+    this.fnProgress('loading');
     var startIndex = this.data.index;
     var endIndex = startIndex+20;
     this.fnLoadMainData(startIndex,endIndex);
@@ -36,11 +36,11 @@ Page({
     })
   },
   //加载动画
-  fnProgress:function(){
+  fnProgress:function(str){
       var _this = this
       wx.showToast({
         title: '加载中',
-        icon: 'loading',
+        icon: str,
         duration:10000,
         mask:false
       });
@@ -60,7 +60,7 @@ Page({
       },
       success: function(res) {
         //接口调用成功显示加载动画
-        _this.fnProgress();
+        _this.fnProgress('loading');
         // console.log(res.data);
         var len = res.data;
         var shopList1 = [];
@@ -85,8 +85,9 @@ Page({
           topList2:shopList2
         }) 
       },
-      error:function(){
-        console.log("后端出错")
+      fail:function(){
+        console.log("后端出错");
+        _this.fnProgress('loading');
       }
     })
   },

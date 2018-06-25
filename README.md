@@ -7,6 +7,6 @@
 
 > LOOK
 
-![Image text](./demo.png)
+![Image text](./demo.jpg)
 
 
